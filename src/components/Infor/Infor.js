@@ -5,20 +5,21 @@ import  InformacionCiudad  from './InformacionCiudad';
 
 
 export const ciudades = [
-    'bogota',
-    'new york',
-    'cali',
-    'tokyo',
-    'paris',
-    'tunja',
-    'ibague',
-    'roma',
-    'cairo',
-    'hiroshima',
-    'nagasaki',
-    'isfahan',
-    'mumbai',
-    'anchorage'
+    'Bogota',
+    'Cali',
+    'Tunja',
+    'Ibague',
+    'Medellin',
+    'Bucaramanga',
+    'Barranquilla',
+    'Pasto',
+    'Neiva',
+    'Armenia',
+    'Cartegena',
+    'Santa Marta',
+    'Florencia',
+    'Yopal'
+
 ]
 function _Infor({ cargarCiudad }) {
 

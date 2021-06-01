@@ -12,20 +12,6 @@ export default function Header() {
                 <a href="#" ><FontAwesomeIcon icon={faCloud}/>Climate And Temperature</a>
 
             </div>
-            <ul className="flex-layout flex-layout--end menu">
-                <li className="flex-layout flex-layout__item flex-layout--content-center">
-                    <span className="flex-layout flex-layout--content-center menu__item menu__item--active">
-                        <a href="#"><FontAwesomeIcon icon={faPlusCircle}/>Ingreso de datos</a>
-                        
-                    </span>
-                </li>
-                
-                <li className="flex-layout flex-layout__item flex-layout--content-center">
-                    <span className="flex-layout flex-layout--content-center menu__item">
-                        <a href="#"><FontAwesomeIcon icon={faDatabase}/>Consulta</a>
-                    </span>
-                </li>
-            </ul>
         </nav>
     </header>
     )
