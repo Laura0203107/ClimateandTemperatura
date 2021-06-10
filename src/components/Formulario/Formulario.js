@@ -3,6 +3,20 @@ import React from 'react'
 import '../../css/styles.css';
 
 function Formulario() {
+
+    //Llamado
+    const [data, setData] = useState({ hits: [] });
+ 
+     useEffect(async () => {
+        const fetchData = async()=>{
+        const url = 'http://127.0.0.0/4000';
+        const res = await fetch(url);
+        const result = await res.json();
+        setData(result);
+    }
+        fetchData();
+    },[data]);
+
     return (
 
         <div className="container page-section">
@@ -25,24 +39,24 @@ function Formulario() {
                 <div className="row">
                     <div className="col">
                         <label>Temperatura</label>
-                        <input type="number" className="form-control" id="inputTemperatura" placeholder="0°"></input>
+                        <input type="number" className="form-control" id="inputTemperatura" Runat="server" placeholder="0°"></input>
                     </div>
                     <div className="col">
                         <label >Humedad</label>
-                        <input type="number" className="form-control" id="inputHumedad" placeholder="0%"></input>
+                        <input type="number" className="form-control" id="inputHumedad" Runat="server" placeholder="0%"></input>
                     </div>
                 </div>
                 <br></br>
                 <br></br>
                 <div className="row">
                     <div className="col">
-                        <select className="form-control" id="FormControlPais">
+                        <select className="form-control" Runat="server" id="FormControlPais">
                             <option>Seleccione Pais</option>
                             <option>Colombia</option>
                         </select>
                     </div>
                     <div className="col">
-                        <select className="form-control" id="FormControlCiudad">
+                        <select className="form-control" Runat="server" id="FormControlCiudad">
                             <option>Seleccione Ciudad</option>
                             <option>Bogota</option>
                             <option>Medellin</option>
@@ -63,7 +77,7 @@ function Formulario() {
                 <div className="row">
                     <div className="col">
                         <label>Fecha y Hora</label>
-                        <input type="date" className="form-control" id="inputFecha" placeholder="0%"></input>
+                        <input type="date" className="form-control" id="inputFecha" Runat="server" placeholder="0%"></input>
                     </div>
                 </div>
                 <hr className="text-center" style={{width: '750px'}}></hr>
@@ -84,5 +98,17 @@ function Formulario() {
 
     );
 }
+const { Pool } = require("pg")
+// Coloca aquí tus credenciales
+    const pool = new Pool({
+        user: "postgres",
+        host: "127.0.0.1",
+        database: "tienda",
+        password: "hunter2",
+        port: 5432,
+      });
+      module.exports = pool;
 
+      
+      
 export default Formulario;
